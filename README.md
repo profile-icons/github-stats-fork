@@ -18,7 +18,6 @@ repositories you have contributed to, but do not own.
 * support portable dark-mode and [i18n](https://github.com/profile-icons/github-stats-modified/issues/1)
 * widen `languages.svg` to use excess `README.md` space and list more language stats
 * display all traffic (views + clones) stats
-* update once weekly
 
 ## Background
 
