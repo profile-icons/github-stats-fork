@@ -4,22 +4,21 @@
 https://github.community/t/support-theme-context-for-images-in-light-vs-dark-mode/147981/84
 -->
 
-<div align="center">
-<a href="https://github.com/jstrieb/github-stats">
-<img src="https://github.com/jstrieb/github-stats/blob/generated/overview.svg#gh-dark-mode-only" />
-<img src="https://github.com/jstrieb/github-stats/blob/generated/languages.svg#gh-dark-mode-only" />
-<img src="https://github.com/jstrieb/github-stats/blob/generated/overview.svg#gh-light-mode-only" />
-<img src="https://github.com/jstrieb/github-stats/blob/generated/languages.svg#gh-light-mode-only" />
-</a>
-</div>
+![](https://raw.githubusercontent.com/profile-icons/github-stats-modified/refs/heads/generated/overview.svg)
+![](https://raw.githubusercontent.com/profile-icons/github-stats-modified/refs/heads/generated/languages.svg)
 
 Generate visualizations of GitHub user and repository statistics with GitHub
 Actions. Visualizations can include data from private repositories, and from
 repositories you have contributed to, but do not own.
 
-Generated images automatically switch between GitHub light theme and GitHub
-dark theme.
+> A modification of [jstrieb/github-stats](https://github.com/jstrieb/github-stats):
 
+* optionally visualize language stats by line changes
+   * backup: line changes weighted by repo language byte share estimation
+* support portable dark-mode and [i18n](https://github.com/profile-icons/github-stats-modified/issues/1)
+* widen `languages.svg` to use excess `README.md` space and list more language stats
+* display all traffic (views + clones) stats
+* update once weekly
 
 ## Background
 
@@ -144,6 +143,7 @@ and retrieve the images.
        the CLI](#list-languages), or in the [list used by GitHub
        linguist](https://github.com/github-linguist/linguist/blob/537297cdae3ab05f8d5dd1c03627a5bd73707b19/lib/linguist/languages.yml)
        (which powers their language analysis on the back end).
+   - To aggregate language statistics based directly on line changes from commit logs, add `true` to a secret called `IS_LOCAL`.
    - Lists for `EXCLUDE_REPOS` and `EXCLUDE_LANGS` can use globbing patterns.
      For example, to exclude all repos by user "jstrieb", add `jstrieb/*` to
      `EXCLUDE_REPOS`.
@@ -167,11 +167,9 @@ and retrieve the images.
    following lines of code into your markdown content.
    - Replace `[USERNAME]` in the links below with your own username.
    ``` markdown
-   ![](https://github.com/[USERNAME]/github-stats/blob/generated/overview.svg#gh-dark-mode-only)
-   ![](https://github.com/[USERNAME]/github-stats/blob/generated/overview.svg#gh-light-mode-only)
-   ![](https://github.com/[USERNAME]/github-stats/blob/generated/languages.svg#gh-dark-mode-only)
-   ![](https://github.com/[USERNAME]/github-stats/blob/generated/languages.svg#gh-light-mode-only)
-   [Created by `jstrieb/github-stats`.](https://github.com/jstrieb/github-stats)
+   ![](https://raw.githubusercontent.com/[USERNAME]/github-stats-modified/refs/heads/generated/overview.svg)
+   ![](https://raw.githubusercontent.com/[USERNAME]/github-stats-modified/refs/heads/generated/languages.svg)
+   [Modification of `jstrieb/github-stats`.](https://github.com/jstrieb/github-stats)
    ```
 1. Star this repo if you like it!
 
